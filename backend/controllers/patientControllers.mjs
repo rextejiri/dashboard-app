@@ -5,10 +5,12 @@ const Patient = mongoose.model('Patient', PatientSchema);
 
 
 console.log(Patient);
+
+// =================== create new patient
+
 export const addNewPatient = (req, res) => {
   // new instance of patient model
   let newPatient = new Patient(req.body);
-
   newPatient.save((err, savedPatient) => {
     if (err) {
       res.send(err);
@@ -16,12 +18,24 @@ export const addNewPatient = (req, res) => {
     res.json(savedPatient);
   });
 };
+// ==================find all patients
 
 export const getPatient = (req, res) => {
-  Patient.find({}, (err, foundPatient) => {
+  Patient.find({}, (err, foundPatients) => {
     if (err) {
       res.send(err);
     }
-    res.json(foundPatient);
+    res.json(foundPatients);
   });
 };
+
+// ================== find and show one patient
+
+export const getPatientWithID = (req, res) => {
+    Patient.findById(req.params.PatientId, (err, foundPatient) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(foundPatient);
+    });
+}
