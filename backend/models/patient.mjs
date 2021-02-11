@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
 export const PatientSchema = new Schema({
-
   firstName: {
     type: String,
     required: 'Enter a fisrt name'
@@ -111,5 +110,5 @@ export const PatientSchema = new Schema({
   prescriptions: {
     type: Array,
     default: []
-  }
+  },
 });

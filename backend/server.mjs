@@ -1,8 +1,9 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-Parser');
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 const app = express();
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config()
 const PORT = process.env.PORT || 3001;
 
 
