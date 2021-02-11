@@ -39,3 +39,16 @@ export const getPatientWithID = (req, res) => {
         res.json(foundPatient);
     });
 }
+
+// ================== find and update one patient
+
+export const updatePatient = (req, res) => {
+    Patient.findByIdAndUpdate(req.params.PatientId,
+      req.body, {new: true},
+      (err, updatedPatient) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(updatedPatient);
+    });
+}
