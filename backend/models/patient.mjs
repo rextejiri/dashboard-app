@@ -15,19 +15,17 @@ export const PatientSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  address: {
-    city: {
-      type: String,
-      required: 'Enter city name'
-    },
-    state: {
-      type: String,
-      required: 'NY'
-    },
-    country: {
-      type: String,
-      required: 'Enter country'
-    }
+  city: {
+    type: String,
+    required: 'Enter city name'
+  },
+  state: {
+    type: String,
+    required: 'NY'
+  },
+  country: {
+    type: String,
+    required: 'Enter country'
   },
   demographics: {
     race: {

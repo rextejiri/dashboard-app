@@ -1,6 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import routes from './routes/patientRoutes.mjs'
+
+
+
+
+
+
 const app = express();
 import dotenv from 'dotenv'
 dotenv.config()
@@ -43,7 +50,9 @@ app.use(express.urlencoded({ extended: false }));
 
 
 
+
 // routes
+routes(app);
 
 app.get('/', (req, res) => {
   res.send(`first route`)
