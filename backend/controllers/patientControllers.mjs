@@ -16,3 +16,12 @@ export const addNewPatient = (req, res) => {
     res.json(savedPatient);
   });
 };
+
+export const getPatient = (req, res) => {
+  Patient.find({}, (err, foundPatient) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(foundPatient);
+  });
+};
