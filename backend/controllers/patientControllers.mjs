@@ -52,3 +52,15 @@ export const updatePatient = (req, res) => {
         res.json(updatedPatient);
     });
 }
+
+// ================== find and update one patient
+
+export const deletePatient = (req, res) => {
+    Patient.findByIdAndRemove(req.params.PatientId,
+      req.body, (err, deletedPatient) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json({message: 'successfully deleted' });
+    });
+}
