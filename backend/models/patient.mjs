@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
 export const PatientSchema = new Schema({
-
   firstName: {
     type: String,
     required: 'Enter a fisrt name'
@@ -16,19 +15,17 @@ export const PatientSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  address: {
-    city: {
-      type: String,
-      required: 'Enter city name'
-    },
-    state: {
-      type: String,
-      required: 'NY'
-    },
-    country: {
-      type: String,
-      required: 'Enter country'
-    }
+  city: {
+    type: String,
+    required: 'Enter city name'
+  },
+  state: {
+    type: String,
+    required: 'NY'
+  },
+  country: {
+    type: String,
+    required: 'Enter country'
   },
   demographics: {
     race: {
@@ -111,5 +108,5 @@ export const PatientSchema = new Schema({
   prescriptions: {
     type: Array,
     default: []
-  }
+  },
 });

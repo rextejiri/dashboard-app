@@ -1,8 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-Parser');
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import routes from './routes/patientRoutes.mjs'
+
+
+
+
+
+
 const app = express();
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config()
 const PORT = process.env.PORT || 3001;
 
 
@@ -34,15 +43,20 @@ mongoose.connection.on('disconnected', () => console.log('mongo disconnected '))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
+// cors set up
+app.use(cors());
+
 // express set up
-app.use(express.json())
+app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
 
 
 
+
 // routes
+routes(app);
 
 app.get('/', (req, res) => {
   res.send(`first route`)
