@@ -42,8 +42,8 @@ class App extends React.Component {
   render () {
     return (
       <div className="container">
-        <div><PatientList patients={this.state.patients} updatecurrentpatient={"this.updateCurrentPatient"}/></div>
-        <div> <PatientSingle /></div>
+        <div><PatientList patients={this.state.patients} updateCurrentPatient={this.updateCurrentPatient}/></div>
+        <div> <PatientSingle patient={this.state.currentPatient} /></div>
         <div> <PatientForm /></div>
       </div>
     );
