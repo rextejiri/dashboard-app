@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import TestSchema from './test.mjs'
+
 
 const Schema = mongoose.Schema;
 
@@ -101,10 +103,7 @@ export const PatientSchema = new Schema({
     type: Array,
     default: ['Ebola virus', 'Alzhemers Disease', 'Syhillis']
   },
-  testResults: {
-    type: Array,
-    default: []
-  },
+  testResults: [TestSchema.schema],
   prescriptions: {
     type: Array,
     default: []
