@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       patients: [],
       currentPatient: {},
+      testResults: []
     }
     this.updateCurrentPatient = this.updateCurrentPatient.bind(this)
   }
@@ -22,21 +23,21 @@ class App extends React.Component {
 
     axios.get(url)
     .then((response) => {
-      console.log(response);
+      console.log(response.data);
       this.setState({
-        patients: response.data
+        patients: response.data,
       })
     })
     .catch((error) => {
-      console.log(error);
     });
   };
 
   updateCurrentPatient(updatedPatient){
     this.setState({
-      currentPatient: updatedPatient
+      currentPatient: updatedPatient,
     })
   }
+
 
 
   render () {

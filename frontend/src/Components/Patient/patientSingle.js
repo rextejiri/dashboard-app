@@ -7,6 +7,9 @@ const PatientSingle = (props) => {
       <div>{props.patient.city}</div>
       <div>{props.patient.state}</div>
       <div>{props.patient.country}</div>
+      <div>{props.patient.lastName}</div>
+      <div>{props.patient.vaccinations}</div>
+      <div>{props.patient.immunoglobulin}</div>
     </div>
   )
 }

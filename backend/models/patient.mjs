@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 export const PatientSchema = new Schema({
   firstName: {
     type: String,
-    required: 'Enter a fisrt name'
+    required: 'Enter a first name'
   },
   lastName: {
     type: String,
@@ -79,17 +79,14 @@ export const PatientSchema = new Schema({
   },
   isImmunized: {
     type: Boolean,
-    default: false
   },
-  immunizationRec:{
-    vaccinations: {
-      type: Array,
-      default:['Corona', 'Malaria', 'Chicken Pulse']
-    },
-    immunoglobulin: {
-      type: Array,
-      default: ['M', 'G', 'A', 'E']
-    }
+  vaccinations: {
+    type: String,
+    enum:['Corona', 'Malaria', 'Chicken Pulse']
+  },
+  immunoglobulin: {
+    type: String,
+    enum: ['M', 'G', 'A', 'E']
   },
   isIll: {
     type: Boolean,

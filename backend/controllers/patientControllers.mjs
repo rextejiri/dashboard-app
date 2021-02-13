@@ -55,7 +55,7 @@ export const updatePatient = (req, res) => {
     });
 }
 
-// ================== find and update one patient
+// ================== find and delete one patient
 
 export const deletePatient = (req, res) => {
     Patient.findByIdAndRemove(req.params.PatientId,
