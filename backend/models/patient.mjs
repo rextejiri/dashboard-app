@@ -14,8 +14,7 @@ export const PatientSchema = new Schema({
     required: 'Enter a last name'
   },
   dob: {
-    type: Date,
-    default: Date.now
+    type: String,
   },
   city: {
     type: String,
@@ -32,7 +31,7 @@ export const PatientSchema = new Schema({
   demographics: {
     race: {
       type: String,
-      enum: ['Hispanic', 'Black African American', 'White']
+      enum:['Hispanic', 'Black', 'White']
     },
     religion: {
       type: String,
@@ -40,17 +39,17 @@ export const PatientSchema = new Schema({
     },
     occupation: {
       type: String,
-      default: 'Web Developer'
     }
   },
   currentDoc:{
     name: {
       type: String,
-      default: 'Johnny Bravo'
     },
     specialty: {
       type: String,
-      enum: ['Family medicine', 'Pedriatrics']
+    },
+    docImg:{
+      type: String,
     }
   },
   prevDoc:{
@@ -59,11 +58,10 @@ export const PatientSchema = new Schema({
   },
   onMed: {
     type: Boolean,
-    default: false
   },
   currentMed: {
     type: Array,
-    default: ['Tylenol', 'Xanax', 'Azithromycin']
+    default: []
   },
   prevMed: {
     type: Array,
@@ -71,7 +69,6 @@ export const PatientSchema = new Schema({
   },
   isAllergic: {
     type: Boolean,
-    default: false
   },
   allergies: {
     type: Array,
@@ -90,7 +87,6 @@ export const PatientSchema = new Schema({
   },
   isIll: {
     type: Boolean,
-    default: false
   },
   currentIllness: {
     type: Array,
@@ -103,6 +99,5 @@ export const PatientSchema = new Schema({
   testResults: [TestSchema.schema],
   prescriptions: {
     type: Array,
-    default: []
   },
 });

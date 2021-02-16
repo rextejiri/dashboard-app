@@ -23,7 +23,7 @@ class App extends React.Component {
 
     axios.get(url)
     .then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       this.setState({
         patients: response.data,
       })
@@ -43,9 +43,9 @@ class App extends React.Component {
   render () {
     return (
       <div className="container">
+      <div> <PatientForm /></div>
         <div><PatientList patients={this.state.patients} updateCurrentPatient={this.updateCurrentPatient}/></div>
-        <div> <PatientSingle patient={this.state.currentPatient} /></div>
-        <div> <PatientForm /></div>
+        <div> <PatientSingle patient={this.state.currentPatient}  /></div>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 
 const PatientSingle = (props) => {
+
+  // console.log(testResults);
   return(
     <div>
       <div>{props.patient.dob}</div>
