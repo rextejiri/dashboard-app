@@ -4,6 +4,8 @@ import axios from 'axios'
 
 
 const PatientList = (props) => {
+
+  
   const deletePatient= (event) => {
     axios.delete('http://localhost:3001/patient/' + event.target.value).then((response) => {
       alert('successfully Deleted ')

@@ -9,24 +9,28 @@ export const PatientSchema = new Schema({
     type: String,
     required: 'Enter a first name'
   },
+  patientImg:{
+    type: String,
+  },
   lastName: {
     type: String,
     required: 'Enter a last name'
   },
-  contact:{
-    phone:{
-      type: Number,
-    },
-    email:{
-      type: String,
-    }
+  age:{
+    type: Number,
+  },
+  phone:{
+    type: Number,
+  },
+  email:{
+    type: String,
   },
   dob: {
     type: String,
   },
   sex:{
     type: String,
-    enum: ['Male, Female']
+    enum: ['Male', 'Female']
   },
   city: {
     type: String,
@@ -39,156 +43,121 @@ export const PatientSchema = new Schema({
     type: String,
     required: 'Enter country'
   },
-  demographics: {
-    race: {
-      type: String,
-      enum:['Hispanic', 'Black', 'White']
-    },
-    religion: {
-      type: String,
-      enum: ['Christian', 'Muslim', 'Budhist']
-    },
-    occupation: {
-      type: String,
-    }
+  race: {
+    type: String,
+    enum:['Hispanic', 'Black', 'White']
   },
-  currentDoc:{
-    name: {
-      type: String,
-    },
-    specialty: {
-      type: String,
-    },
-    docImg:{
-      type: String,
-    }
+  religion: {
+    type: String,
+    enum: ['Christian', 'Muslim', 'Budhist']
   },
-  prevMed: {
-    one: {
-      type: String,
-    },
-    two: {
-      type: String,
-    },
-    three: {
-      type: String,
-    },
-    four: {
-      type: String,
-    },
+  occupation: {
+    type: String,
+  },
+  docName: {
+    type: String,
+  },
+  docSpecialty: {
+    type: String,
+  },
+  docImg:{
+    type: String,
+  },
+  medOne: {
+    type: String,
+  },
+  medTwo: {
+    type: String,
+  },
+  medThree: {
+    type: String,
+  },
+  medFour: {
+    type: String,
   },
   isAllergic: {
     type: String,
     enum: ['Yes', 'No']
   },
-  allergies: {
-    one:{
-      type:String,
-    },
-    two:{
-      type:String,
-    },
-    three:{
-      type:String,
-    },
-    four:{
-      type: String,
-    }
+  allergyOne:{
+    type:String,
+  },
+  allergyTwo:{
+    type:String,
+  },
+  allergyThree:{
+    type:String,
+  },
+  allergyFour:{
+    type: String,
   },
   isImmunized: {
     type: String,
     enum: ['Yes', 'No']
   },
-  vaccinations: {
-    one: {
-      type: String,
-    },
-    two: {
-      type: String,
-    },
-    three: {
-      type: String,
-    },
-    four: {
-      type: String,
-    }
+  vOne: {
+    type: String,
   },
-  prescriptions: {
-    one: {
-      type: String,
-    },
-    two: {
-      type: String,
-    },
-    three: {
-      type: String,
-    },
-    four: {
-      type: String,
-    },
-    five: {
-      type: String,
-    },
+  vTwo: {
+    type: String,
   },
-  test1:{
-    testType:{
-      type: String,
-    },
-    result:{
-      type: Number,
-    },
-    flag:{
-      type: String,
-      enum: ['High', 'Low', 'Stable']
-    },
-    unit:{
-      type: String,
-    }
+  vThree: {
+    type: String,
   },
-  test2:{
-    testType:{
-      type: String,
-    },
-    result:{
-      type: Number,
-    },
-    flag:{
-      type: String,
-      enum: ['High', 'Low', 'Stable']
-    },
-    unit:{
-      type: String,
-    }
+  vFour: {
+    type: String,
   },
-  test3:{
-    testType:{
-      type: String,
-    },
-    result:{
-      type: Number,
-    },
-    flag:{
-      type: String,
-      enum: ['High', 'Low', 'Stable']
-    },
-    unit:{
-      type: String,
-    }
+  testType1:{
+    type: String,
   },
-  test4:{
-    testType:{
-      type: String,
-    },
-    result:{
-      type: Number,
-    },
-    flag:{
-      type: String,
-      enum: ['High', 'Low', 'Stable']
-    },
-    unit:{
-      type: String,
-    }
+  result1:{
+    type: Number,
+  },
+  flag1:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit1:{
+    type: String,
+  },
+  testType2:{
+    type: String,
+  },
+  result2:{
+    type: Number,
+  },
+  flag2:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit2:{
+    type: String,
+  },
+  testType3:{
+    type: String,
+  },
+  result3:{
+    type: Number,
+  },
+  flag3:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit3:{
+    type: String,
+  },
+  testType4:{
+    type: String,
+  },
+  result4:{
+    type: Number,
+  },
+  flag4:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit4:{
+    type: String,
   },
 
   testResults: [TestSchema.schema],

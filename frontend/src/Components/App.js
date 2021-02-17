@@ -13,7 +13,6 @@ class App extends React.Component {
     this.state = {
       patients: [],
       currentPatient: {},
-      testResults: []
     }
     this.updateCurrentPatient = this.updateCurrentPatient.bind(this)
   }
