@@ -42,9 +42,12 @@ class App extends React.Component {
   render () {
     return (
       <div className="container">
-      <div> <PatientForm /></div>
-        <div><PatientList deletePatient={this.state.deletePatient} patients={this.state.patients} updateCurrentPatient={this.updateCurrentPatient}/></div>
-        <div> <PatientSingle patient={this.state.currentPatient}  /></div>
+        <div> <PatientForm /></div>
+        <div className="single_list_container">
+          <div className="patientListApp"><PatientList deletePatient={this.state.deletePatient} patients={this.state.patients} updateCurrentPatient={this.updateCurrentPatient}/></div>
+          <div className="patientSingleApp"> <PatientSingle patient={this.state.currentPatient}  /></div>
+        </div>
+
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios'
+import '../App.css';
+
 
 
 
@@ -13,7 +15,7 @@ const PatientList = (props) => {
   }
 
  return(
-   <div>
+   <div className="patientlist">
       <ul>
         <li><h4>Patients</h4></li>
         {props.patients.map((patient) => (
