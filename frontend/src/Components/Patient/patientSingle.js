@@ -13,21 +13,26 @@ const PatientSingle = (props) => {
   // console.log(testResults);
   return(
     <div className="patientContainer">
-      <div className="info">
-        <div>Name: {name}</div>
-        <div>DOB: {patient.dob}</div>
-        <div>Sex: {patient.sex}</div>
-        <div>Age: {patient.age}</div>
+      <div className="info-container">
+        <div className="info">
+          <div>Name: {name}</div>
+          <div>DOB: {patient.dob}</div>
+          <div>Sex: {patient.sex}</div>
+          <div>Age: {patient.age}</div>
+        </div>
+        <div className="info">
+          <div>Allergic: {patient.isAllergic}</div>
+          <div>Allergies:  {allergies}</div>
+          <div>Race:  {patient.race}</div>
+          <div>Religion:  {patient.religion}</div>
+        </div>
+        <div className="info">
+          <div>Address: {address}</div>
+          <div>Email: {patient.email}</div>
+          <div>Phone: {patient.phone}</div>
+        </div>
       </div>
-      <div className="info">
-        <div>Allergic: {patient.isAllergic}</div>
-        <div>Allergies:  {allergies}</div>
-      </div>
-      <div className="info"> 
-        <div>Address: {address}</div>
-        <div>Email: {patient.email}</div>
-        <div>Phone: {patient.phone}</div>
-      </div>
+
       <div className="chartContainer">
         <div><Example  /></div>
         <div><BasicTable patient={props.patient} /></div>

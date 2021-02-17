@@ -1,3 +1,166 @@
-body {
-  background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+
+:root {
+  --bodyBackground: #121212;
+  --bodyTextColor: #E5E5E5;
+  --listbackground: rgba(199,0,57,0.6);
+  --info: rgba(240,11,77,0.7);
+  --listbackgroundhover: rgba(199,0,57,1);
+  --inputbackground: rgba(90,90,90,0.6);
+  --dropShadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  --transition: all 0.3s ease 0s;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 1px solid pink;
+}
+
+html, body{
+  height: 100%;
+  overflow: auto;
+}
+
+body{
+  background: var(--bodyBackground);
+  color: var(--bodyTextColor);
+  height: 100%;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.container{
+ display:flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ align-items: center;
+ width: 100%;
+}
+.single_list_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.patientListApp{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* border: 4px solid yellow; */
+  width: 330px;
+  height: 400px;
+}
+
+.patientlist{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--listbackground);
+  border-top-right-radius: 12px 12px;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.singlePatient{
+  width: 100%;
+  margin-top: 12px;
+  background-color: var(--listbackground);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  transition: var(--transition)
+}
+
+
+.singlePatient:hover{
+  background-color: var(--listbackgroundhover);
+  cursor: pointer;
+  transform: scale(0.98);
+}
+hr{
+  width: 100%;
+  opacity: 0.7;
+  margin-top: 12px;
+}
+.plist{
+  margin-top: 12px;
+}
+
+
+.patientContainer{
+  /* border: 4px solid green; */
+  display: flex;
+  flex-direction: column;
+  height: 1024px;
+  width: 980px;
+  overflow: scroll;
+}
+
+.info-container{
+  display: flex;
+  justify-content: space-between;
+}
+.info{
+  height: 225.90908813476562px;
+  width: 314.7024841308594px;
+  left: 396px;
+  top: 56px;
+  border-radius: 12px;
+  box-shadow: var(--dropShadow);
+  background-color: var(--info);
+  transition: var(--transition)
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 35px;
+}
+.info > div{
+  height: 33.8863639831543px;
+  left: 733.608154296875px;
+  top: 77.56405639648438px;
+  padding-left: 12px;
+}
+
+.info:hover{
+  background-color: var(--listbackgroundhover);
+  transform: scale(0.98)
+}
+
+.chartContainer{
+  display: flex;
+}
+
+.pie_bar_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 315px;
+  align-items: center;
+}
+
+.pieChart{
+  width: 315px;
+  height: 244px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 4px solid green; */
+  margin-bottom: 24px;
+}
+
+.pie{
+  align-self: center;
+  border: 4px solid yellow;
+  margin-top: -100px;
+  margin-left: -100px;
 }

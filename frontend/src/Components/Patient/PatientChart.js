@@ -46,7 +46,7 @@ export default class Example extends PureComponent {
       <div className="pie_bar_container">
 
         <div className="pieChart">
-        <PieChart width={400} height={400}>
+        <PieChart className="pie" width={300} height={300} >
           <Pie
             data={meds}
             cx={200}
@@ -66,8 +66,8 @@ export default class Example extends PureComponent {
 
         <div className="barChart">
           <BarChart
-            width={500}
-            height={300}
+            width={315}
+            height={244}
             data={hospitalVisits}
             margin={{
               top: 5,

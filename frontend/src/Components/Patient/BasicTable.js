@@ -7,13 +7,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import '../App.css';
 
 
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    minWidth: 200,
   },
 });
 
