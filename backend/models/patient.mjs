@@ -1,23 +1,39 @@
 import mongoose from 'mongoose';
+import TestSchema from './test.mjs'
+
 
 const Schema = mongoose.Schema;
 
 export const PatientSchema = new Schema({
   firstName: {
     type: String,
-    required: 'Enter a fisrt name'
+    required: 'Enter a first name'
+  },
+  patientImg:{
+    type: String,
   },
   lastName: {
     type: String,
     required: 'Enter a last name'
   },
+  age:{
+    type: Number,
+  },
+  phone:{
+    type: Number,
+  },
+  email:{
+    type: String,
+  },
   dob: {
-    type: Date,
-    default: Date.now
+    type: String,
+  },
+  sex:{
+    type: String,
+    enum: ['Male', 'Female']
   },
   city: {
     type: String,
-    required: 'Enter city name'
   },
   state: {
     type: String,
@@ -27,86 +43,123 @@ export const PatientSchema = new Schema({
     type: String,
     required: 'Enter country'
   },
-  demographics: {
-    race: {
-      type: String,
-      enum: ['Hispanic', 'Black African American', 'White']
-    },
-    religion: {
-      type: String,
-      enum: ['Christian', 'Muslim', 'Budhist']
-    },
-    occupation: {
-      type: String,
-      default: 'Web Developer'
-    }
+  race: {
+    type: String,
+    enum:['Hispanic', 'Black', 'White']
   },
-  currentDoc:{
-    name: {
-      type: String,
-      default: 'Johnny Bravo'
-    },
-    specialty: {
-      type: String,
-      enum: ['Family medicine', 'Pedriatrics']
-    }
+  religion: {
+    type: String,
+    enum: ['Christian', 'Muslim', 'Budhist']
   },
-  prevDoc:{
-    type: Array,
-    default: []
+  occupation: {
+    type: String,
   },
-  onMed: {
-    type: Boolean,
-    default: false
+  docName: {
+    type: String,
   },
-  currentMed: {
-    type: Array,
-    default: ['Tylenol', 'Xanax', 'Azithromycin']
+  docSpecialty: {
+    type: String,
   },
-  prevMed: {
-    type: Array,
-    default: []
+  docImg:{
+    type: String,
+  },
+  medOne: {
+    type: String,
+  },
+  medTwo: {
+    type: String,
+  },
+  medThree: {
+    type: String,
+  },
+  medFour: {
+    type: String,
   },
   isAllergic: {
-    type: Boolean,
-    default: false
+    type: String,
+    enum: ['Yes', 'No']
   },
-  allergies: {
-    type: Array,
-    default: ['Dairy','Cats']
+  allergyOne:{
+    type:String,
+  },
+  allergyTwo:{
+    type:String,
+  },
+  allergyThree:{
+    type:String,
+  },
+  allergyFour:{
+    type: String,
   },
   isImmunized: {
-    type: Boolean,
-    default: false
+    type: String,
+    enum: ['Yes', 'No']
   },
-  immunizationRec:{
-    vaccinations: {
-      type: Array,
-      default:['Corona', 'Malaria', 'Chicken Pulse']
-    },
-    immunoglobulin: {
-      type: Array,
-      default: ['M', 'G', 'A', 'E']
-    }
+  vOne: {
+    type: String,
   },
-  isIll: {
-    type: Boolean,
-    default: false
+  vTwo: {
+    type: String,
   },
-  currentIllness: {
-    type: Array,
-    default: ['Corona virus', 'Alzhemers Disease']
+  vThree: {
+    type: String,
   },
-  prevIllness: {
-    type: Array,
-    default: ['Ebola virus', 'Alzhemers Disease', 'Syhillis']
+  vFour: {
+    type: String,
   },
-  testResults: {
-    type: Array,
-    default: []
+  testType1:{
+    type: String,
   },
-  prescriptions: {
-    type: Array,
-    default: []
+  result1:{
+    type: Number,
   },
+  flag1:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit1:{
+    type: String,
+  },
+  testType2:{
+    type: String,
+  },
+  result2:{
+    type: Number,
+  },
+  flag2:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit2:{
+    type: String,
+  },
+  testType3:{
+    type: String,
+  },
+  result3:{
+    type: Number,
+  },
+  flag3:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit3:{
+    type: String,
+  },
+  testType4:{
+    type: String,
+  },
+  result4:{
+    type: Number,
+  },
+  flag4:{
+    type: String,
+    enum: ['High', 'Low', 'Stable']
+  },
+  unit4:{
+    type: String,
+  },
+
+  testResults: [TestSchema.schema],
+
 });

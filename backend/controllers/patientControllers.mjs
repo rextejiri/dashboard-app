@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
 import { PatientSchema } from '../models/patient.mjs';
+import { TestSchema } from '../models/test.mjs';
+
+const Test = mongoose.model('Test', TestSchema);
 
 const Patient = mongoose.model('Patient', PatientSchema);
 
 
-console.log(Patient);
 
 // =================== create new patient
 
@@ -53,7 +55,7 @@ export const updatePatient = (req, res) => {
     });
 }
 
-// ================== find and update one patient
+// ================== find and delete one patient
 
 export const deletePatient = (req, res) => {
     Patient.findByIdAndRemove(req.params.PatientId,
@@ -63,4 +65,21 @@ export const deletePatient = (req, res) => {
         }
         res.json({message: 'successfully deleted' });
     });
+}
+
+
+// ======================create test TestResults
+
+export const createTestResults = (req, res) => {
+  Patient.findById(req.params.PatientId, (err, foundPatient) =>{
+    Test.create(req.body, (err, createdTest) => {
+      foundPatient.testResults.unshift(createdTest)
+      foundPatient.save((err, data) => {
+        if (err) {
+          res.send(err)
+        }
+        res.json(foundPatient)
+      })
+    })
+  })
 }
