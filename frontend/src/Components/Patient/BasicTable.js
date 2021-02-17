@@ -29,7 +29,6 @@ export default function BasicTable(props) {
       createData(patient.testType3, patient.result3, patient.flag3, patient.unit3,),
       createData(patient.testType4, patient.result4, patient.flag4, patient.unit4,),
   ];
-  console.log(props.patient.firstName);
   const classes = useStyles();
 
   return (

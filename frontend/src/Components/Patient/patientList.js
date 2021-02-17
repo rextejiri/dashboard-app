@@ -19,7 +19,9 @@ const PatientList = (props) => {
         {props.patients.map((patient) => (
           <div key={patient._id}        onClick={props.updateCurrentPatient.bind(this, patient)} >
             {patient.firstName} {patient.lastName}
-            <button value={patient._id} onClick={deletePatient}>X</button>
+            <div>
+              <button value={patient._id} onClick={deletePatient}>X</button>
+            </div>
           </div>
         ))}
       </ul>

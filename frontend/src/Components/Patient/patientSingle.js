@@ -5,20 +5,33 @@ import BasicTable from '../Patient/BasicTable.js'
 
 
 const PatientSingle = (props) => {
+  const patient = props.patient
+  const name = patient.firstName + " " + patient.lastName
+  const address = patient.city + " " + patient.state + ", " + patient.country
+  const allergies = patient.allergyOne + ", " + patient.allergyTwo + ", " + patient.allergyThree
 
   // console.log(testResults);
   return(
-    <div>
-    <div><Example  /></div>
-    <BasicTable patient={props.patient} />
-      <div>{props.patient.dob}</div>
-      <div>{props.patient.city}</div>
-      <div>{props.patient.state}</div>
-      <div>{props.patient.country}</div>
-      <div>{props.patient.lastName}</div>
-      <div>{props.patient.email}</div>
-      <div>{props.patient.age}</div>
-      <div>{props.patient.phone}</div>
+    <div className="patientContainer">
+      <div className="info">
+        <div>Name: {name}</div>
+        <div>DOB: {patient.dob}</div>
+        <div>Sex: {patient.sex}</div>
+        <div>Age: {patient.age}</div>
+      </div>
+      <div>
+        <div>Allergic: {patient.isAllergic}</div>
+        <div>Allergies:  {allergies}</div>
+      </div>
+      <div>
+        <div>Address: {address}</div>
+        <div>Email: {patient.email}</div>
+        <div>Phone: {patient.phone}</div>
+      </div>
+      <div>
+        <div><Example  /></div>
+        <div><BasicTable patient={props.patient} /></div>
+      </div>
     </div>
   )
 }
