@@ -1,7 +1,7 @@
 import { addNewPatient,
    getPatient,
    getPatientWithID,
-   updatePatient, deletePatient }
+   updatePatient, deletePatient, createTestResults }
    from '../controllers/patientControllers.mjs';
 
 
@@ -20,6 +20,8 @@ const routes = (app) => {
     .put(updatePatient)
     // delete route
     .delete(deletePatient)
+    // post test result routes
+    .post(createTestResults)
 
 }
 
