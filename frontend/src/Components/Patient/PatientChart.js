@@ -23,7 +23,7 @@ const hospitalVisits = [
 ]
 
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#003366', '#f8e076', '#FC6C85', '#228b22'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -54,7 +54,7 @@ export default class Example extends PureComponent {
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius={80}
-            fill="#8884d8"
+            fill="#003153"
             dataKey="value"
           >
             {meds.map((entry, index) => (
@@ -82,7 +82,7 @@ export default class Example extends PureComponent {
             <Tooltip />
             <Legend />
             <CartesianGrid strokeDasharray="3 3" />
-            <Bar dataKey="visits" fill="#8884d8" background={{ fill: '#eee' }} />
+            <Bar dataKey="visits" fill="#007FFF" background={{ fill: '#eee' }} />
           </BarChart>
         </div>
       </div>

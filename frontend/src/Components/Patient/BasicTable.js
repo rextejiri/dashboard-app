@@ -12,7 +12,10 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 200,
+    minWidth: 642,
+    minHeight: 600,
+    backgroundColor: "#1A1818",
+    color: "E5E5E5",
   },
 });
 
@@ -37,22 +40,22 @@ export default function BasicTable(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Test Name</TableCell>
-            <TableCell align="right">Result</TableCell>
-            <TableCell align="right">Flag</TableCell>
-            <TableCell align="right">Unit</TableCell>
+            <TableCell align="center" style={{color: "#E5E5E5"}}>Test Name</TableCell>
+            <TableCell style={{color: "#E5E5E5"}} align="center">Result</TableCell>
+            <TableCell style={{color: "#E5E5E5"}} align="center">Flag</TableCell>
+            <TableCell style={{color: "#E5E5E5"}} align="center">Unit</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody style={{color: "#E5E5E5"}}>
           {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
+            <TableRow style={{color: "#E5E5E5"}} key={row.name}>
+              <TableCell align="center" style={{color: "#E5E5E5"}} component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell style={{color: "#E5E5E5"}} align="center">{row.calories}</TableCell>
+              <TableCell style={{color: "#E5E5E5"}} align="center">{row.fat}</TableCell>
+              <TableCell style={{color: "#E5E5E5"}} align="center">{row.carbs}</TableCell>
+
             </TableRow>
           ))}
         </TableBody>

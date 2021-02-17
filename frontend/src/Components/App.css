@@ -2,7 +2,7 @@
 
 
 :root {
-  --bodyBackground: #121212;
+  --bodyBackground: #1A1818;
   --bodyTextColor: #E5E5E5;
   --listbackground: rgba(199,0,57,0.6);
   --info: rgba(240,11,77,0.7);
@@ -16,7 +16,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
 }
 
 html, body{
@@ -104,6 +104,10 @@ hr{
   overflow: scroll;
 }
 
+.patientContainer{
+  display: none;
+}
+
 .info-container{
   display: flex;
   justify-content: space-between;
@@ -146,6 +150,8 @@ hr{
   justify-content: flex-start;
   width: 315px;
   align-items: center;
+  margin-left: -48px;
+  margin-right: 56px;
 }
 
 .pieChart{
@@ -155,12 +161,22 @@ hr{
   justify-content: center;
   align-items: center;
   /* border: 4px solid green; */
-  margin-bottom: 24px;
+  margin-bottom: 48px;
+}
+button {
+  opacity: 0.7;
+  
 }
 
 .pie{
   align-self: center;
-  border: 4px solid yellow;
+  /* border: 4px solid yellow; */
   margin-top: -100px;
   margin-left: -100px;
+}
+
+Form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }

@@ -35,6 +35,7 @@ class App extends React.Component {
     this.setState({
       currentPatient: updatedPatient,
     })
+    document.querySelector(".patientContainer").style.display = "flex"
   }
 
 
