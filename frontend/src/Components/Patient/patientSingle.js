@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css'
 import Example from '../Patient/PatientChart.js'
+import BasicTable from '../Patient/BasicTable.js'
 
 
 const PatientSingle = (props) => {
@@ -8,7 +9,8 @@ const PatientSingle = (props) => {
   // console.log(testResults);
   return(
     <div>
-    <div><Example /></div>
+    <div><Example  /></div>
+    <BasicTable patient={props.patient} />
       <div>{props.patient.dob}</div>
       <div>{props.patient.city}</div>
       <div>{props.patient.state}</div>
